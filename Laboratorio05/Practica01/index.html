@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Computación - Artículos (estructura semántica)</title>
+</head>
+<body>
+
+  <header>
+    <h1>Portal de Computación</h1>
+    <nav>
+      <ul>
+        <li><a href="#historia">Historia</a></li>
+        <li><a href="#hardware">Hardware</a></li>
+        <li><a href="#software">Software</a></li>
+        <li><a href="#recursos">Recursos</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+
+    <section>
+      <article id="historia">
+        <header>
+          <h2>Historia de la Computación</h2>
+          <p><small>Resumen y recorrido por las etapas clave de la evolución computacional.</small></p>
+        </header>
+
+        <figure>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/ENIAC_Penn1.jpg" alt="ENIAC" width="420">
+          <figcaption>ENIAC (1940s), una de las primeras computadoras electrónicas.</figcaption>
+        </figure>
+
+        <p>
+          La historia de la computación atraviesa siglos: desde instrumentos rudimentarios como el ábaco,
+          pasando por máquinas mecánicas, hasta ordenadores electrónicos y la computación distribuida moderna.
+          Cada etapa implicó un cambio tecnológico y social profundo: formas nuevas de calcular, de mantener
+          información y, finalmente, de comunicarnos globalmente.
+        </p>
+
+        <section>
+          <details id="historia-primera">
+            <summary>Primera generación (tubos de vacío)</summary>
+            <p>
+              Entre 1940 y 1956 las máquinas empleaban tubos de vacío. Eran grandes, consumían mucha energía 
+              y requerían mantenimiento constante. Sus aplicaciones iniciales fueron cálculos militares y científicos.
+            </p>
+
+            <details>
+              <summary>ENIAC y sus características</summary>
+              <p>
+                ENIAC fue programado con cables y interruptores; no tenía software flexible como hoy.
+                Requería semanas para reconfigurarlo para un nuevo problema. Aun así, demostró la viabilidad
+                de la computación electrónica a gran escala.
+              </p>
+            </details>
+
+            <details>
+              <summary>Limitaciones y legado</summary>
+              <p>
+                Las limitaciones (calor, tamaño, coste) impulsaron la búsqueda de componentes más fiables,
+                allanando el camino al transistor.
+              </p>
+            </details>
+          </details>
+
+          <details>
+            <summary>Segunda y tercera generación (transistores y circuitos integrados)</summary>
+            <p>
+              La invención del transistor (años 50) redujo tamaño y consumo; los circuitos integrados (años 60)
+              permitieron multiplexar miles de transistores en una sola pastilla de silicio, acelerando la miniaturización.
+            </p>
+
+            <details>
+              <summary>Transistor: impacto técnico</summary>
+              <p>
+                Permitió equipos más fiables y accesibles. Las universidades y empresas comenzaron a desarrollar
+                sistemas para negocios y ciencia.
+              </p>
+            </details>
+
+            <details>
+              <summary>Circuitos integrados y la industria</summary>
+              <p>
+                La industria electrónica se transformó: nacieron empresas dedicadas al diseño de chips y placas.
+              </p>
+            </details>
+          </details>
+
+          <details>
+            <summary>Microprocesadores y la era personal</summary>
+            <p>
+              Con la aparición del microprocesador a fines de los 70, las computadoras personales se hicieron
+              posibles: más usuarios, más software comercial y una revolución educativa y productiva.
+            </p>
+
+            <details>
+              <summary>PCs y software comercial</summary>
+              <p>
+                La disponibilidad de hardware asequible y sistemas operativos sencillos permitió la difusión masiva
+                de herramientas de oficina, educación y entretenimiento.
+              </p>
+            </details>
+
+            <details>
+              <summary>Internet y la globalización de la información</summary>
+              <p>
+                El desarrollo de la red y protocolos estándar (TCP/IP, HTTP) cambió radicalmente la forma de compartir
+                conocimiento y servicios.
+              </p>
+            </details>
+          </details>
+        </section>
+
+        <footer>
+          <p>Autor: Equipo de Historia Tecnológica | Fecha: 2025</p>
+        </footer>
+      </article>
+
+      <article id="hardware">
+        <header>
+          <h2>Hardware: componentes y arquitectura</h2>
+          <p><small>Descripción detallada de piezas físicas, funcionamiento y decisiones de diseño.</small></p>
+        </header>
+
+        <figure>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Computer-motherboard.jpg" alt="Placa base" width="420">
+          <figcaption>Placa base (motherboard) con CPU, ranuras y controladoras.</figcaption>
+        </figure>
+
+        <p>
+          El hardware conforma la parte tangible de la computación: chips, placas, memorias y periféricos.
+          Su diseño define límites de rendimiento, consumo y escalabilidad. A continuación se desarrollan
+          aspectos clave con subtemas y detalles técnicos.
+        </p>
+
+        <section>
+          <details id="hardware-procesador">
+            <summary>Procesador (CPU)</summary>
+            <p>
+              La CPU interpreta y ejecuta instrucciones. Hoy los procesadores son multicore, con pipelines,
+              caches y unidades vectoriales dedicadas.
+            </p>
+
+            <details>
+              <summary>Arquitectura: RISC vs CISC</summary>
+              <p>
+                RISC (instrucciones simples, ejecutadas rápido) y CISC (instrucciones más complejas) son filosofías
+                diferentes; ambas han convergido en implementaciones modernas que usan técnicas mixtas.
+              </p>
+            </details>
+
+            <details>
+              <summary>Núcleos, hilos y paralelismo</summary>
+              <p>
+                El paralelismo (múltiples núcleos e hilos) permite ejecutar tareas simultáneas y acelera cargas
+                de trabajo como renderizado, machine learning y servidores web.
+              </p>
+              <ul>
+                <li>Multiprocesamiento simétrico (SMP)</li>
+                <li>Hiperhilos (simular hilos extra por núcleo)</li>
+                <li>GPU para cómputo masivamente paralelo</li>
+              </ul>
+            </details>
+          </details>
+
+          <details id="hardware-memoria">
+            <summary>Memoria</summary>
+            <p>
+              La jerarquía de memoria (registros, L1/L2/L3 cache, RAM, almacenamiento) determina latencias
+              y throughput del sistema; diseñar balances es clave para rendimiento eficiente.
+            </p>
+
+            <details>
+              <summary>RAM vs almacenamiento secundario</summary>
+              <p>
+                La RAM es volátil y rápida; los discos (HDD/SSD) ofrecen persistencia. Los SSD han reducido
+                dramáticamente los tiempos de acceso en la última década.
+              </p>
+            </details>
+
+            <details>
+              <summary>Jerarquía de caches</summary>
+              <p>
+                Caches cercanos al núcleo reducen accesos a memoria principal. Un buen uso de cache mejora
+                el rendimiento de forma exponencial en ciertos algoritmos.
+              </p>
+            </details>
+          </details>
+
+          <details id="hardware-perifericos">
+            <summary>Periféricos y comunicaciones</summary>
+            <p>
+              Incluyen dispositivos de entrada, salida y almacenamiento externo. Su integración define la
+              experiencia de usuario y la interoperabilidad del sistema.
+            </p>
+
+            <details>
+              <summary>Entrada y salida (I/O)</summary>
+              <p>
+                Controladores y buses (USB, PCIe, Thunderbolt) facilitan el intercambio de datos entre periféricos
+                y la placa base con distintas latencias y anchos de banda.
+              </p>
+            </details>
+
+            <details>
+              <summary>Almacenamiento externo y redes</summary>
+              <p>
+                Discos externos, NAS y servicios en la nube permiten escalabilidad y copias de seguridad. Las redes
+                añaden otro nivel de complejidad en rendimiento y seguridad.
+              </p>
+            </details>
+          </details>
+        </section>
+
+        <footer>
+          <p>Autor: Equipo de Hardware | Fecha: 2025</p>
+        </footer>
+      </article>
+
+      <article id="software">
+        <header>
+          <h2>Software: sistemas, aplicaciones y modelos de desarrollo</h2>
+          <p><small>Exploración del software desde el kernel hasta las aplicaciones y modelos colaborativos.</small></p>
+        </header>
+
+        <figure>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Ubuntu_24.04_LTS.png" alt="Sistema operativo" width="420">
+          <figcaption>Ejemplo de sistema operativo (interfaz y servicios de fondo).</figcaption>
+        </figure>
+
+        <p>
+          El software convierte al hardware en herramientas útiles. Incluye sistemas operativos, librerías,
+          aplicaciones y frameworks. También abarca prácticas de diseño, pruebas y despliegue que definen
+          la calidad del producto final.
+        </p>
+
+        <section>
+          <details id="software-sistemas">
+            <summary>Sistemas operativos</summary>
+            <p>
+              Administran recursos (CPU, memoria, I/O), gestionan procesos y proporcionan abstracciones para
+              que las aplicaciones funcionen sin conocer detalles hardware.
+            </p>
+
+            <details>
+              <summary>Kernel y modos de ejecución</summary>
+              <p>
+                El kernel actúa en modo privilegiado, coordinando recursos y controlando acceso a hardware.
+                Existen kernels monolíticos y microkernels; cada enfoque tiene ventajas y compromisos.
+              </p>
+            </details>
+
+            <details>
+              <summary>Gestión de procesos y concurrencia</summary>
+              <p>
+                La planificación (schedulers), sincronización (mutexes, semáforos) y comunicación entre procesos
+                son fundamentos para aplicaciones reactivas y de servidor.
+              </p>
+            </details>
+          </details>
+
+          <details>
+            <summary>Software de aplicación</summary>
+            <p>
+              Engloba programas que realizan tareas concretas: navegadores, suites ofimáticas, aplicaciones móviles,
+              videojuegos y software de productividad empresarial.
+            </p>
+
+            <details>
+              <summary>Navegadores y la web moderna</summary>
+              <p>
+                Los navegadores son plataformas complejas que ejecutan JavaScript, renderizan gráficos y gestionan seguridad
+                para miles de millones de páginas web.
+              </p>
+            </details>
+
+            <details>
+              <summary>Aplicaciones móviles y distribución</summary>
+              <p>
+                Las apps móviles requieren optimización por batería, rendimiento y experiencia de usuario; su distribución
+                suele centralizarse en tiendas (App Store, Play Store).
+              </p>
+            </details>
+          </details>
+
+          <details>
+            <summary>Modelos de desarrollo y licencias</summary>
+            <p>
+              El modo en que se desarrolla y licencia el software influye en su adopción: el software libre fomenta
+              colaboración, mientras que licencias propietarias suelen priorizar control comercial.
+            </p>
+
+            <details>
+              <summary>Software libre y comunidades</summary>
+              <p>
+                Proyectos como Linux o Apache demuestran cómo comunidades distribuidas mantienen y mejoran software crítico
+                mediante colaboración abierta.
+              </p>
+            </details>
+
+            <details>
+              <summary>Modelos de desarrollo: Agile, DevOps</summary>
+              <p>
+                Metodologías ágiles (Scrum, Kanban) y prácticas DevOps (CI/CD, automatización) aceleran entregas y mejoran calidad.
+              </p>
+            </details>
+          </details>
+        </section>
+
+        <footer>
+          <p>Autor: Equipo de Software | Fecha: 2025</p>
+        </footer>
+      </article>
+
+    </section>
+
+    <aside>
+      <h2>Enlaces y recursos</h2>
+      <ul>
+        <li><a href="#historia">Historia de la Computación (artículo)</a></li>
+        <li><a href="#historia-primera">→ Primera generación (subtema)</a></li>
+        <li><a href="#hardware">Hardware (artículo)</a></li>
+        <li><a href="#hardware-procesador">→ Procesador (subtema)</a></li>
+        <li><a href="#software">Software (artículo)</a></li>
+        <li><a href="#software-sistemas">→ Sistemas operativos (subtema)</a></li>
+      </ul>
+
+      <h3>Lecturas recomendadas</h3>
+      <ul>
+        <li><a href="https://es.wikipedia.org/wiki/Historia_de_la_computaci%C3%B3n" target="_blank" rel="noopener">Historia de la computación (Wikipedia)</a></li>
+        <li><a href="https://es.wikipedia.org/wiki/Hardware" target="_blank" rel="noopener">Hardware (Wikipedia)</a></li>
+        <li><a href="https://es.wikipedia.org/wiki/Software" target="_blank" rel="noopener">Software (Wikipedia)</a></li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Portal de Computacion — Contenido educativo y de referencia</p>
+  </footer>
+
+</body>
+</html>
