@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: "Georgia", serif;
+    background: linear-gradient(to bottom right, #f8f7f3, #e8e5f7);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 50px 20px 30px 20px;
+    background-color: #f3f0fa;
+    border-bottom: 2px solid #d1c7eb;
+    box-shadow: 0 3px 6px rgba(80, 60, 120, 0.1);
+}
+
+h1 {
+    color: #3c2f7b;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #555;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+}
+
+.lista-tareas {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(120, 100, 150, 0.15);
+    width: 100%;
+    max-width: 600px;
+}
+
+h2 {
+    color: #4b358d;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+ol {
+    list-style: none;
+    counter-reset: tarea;
+}
+
+li {
+    position: relative;
+    padding: 12px 15px 12px 40px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+/* Alternar colores de filas pares e impares */
+li:nth-child(odd) {
+    background-color: #f6f6f6;
+}
+
+li:nth-child(even) {
+    background-color: #eaeaea;
+}
+
+/* Agrega los caracteres ==> al inicio */
+li::before {
+    content: "==> ";
+    position: absolute;
+    left: 10px;
+    color: #6b5ea6;
+    font-weight: bold;
+}
+
+/* Cuando la tarea esta hecha, muestra \/ al final */
+li.hecha::after {
+    content: " \\/";
+    color: #4b8a3f;
+    font-weight: bold;
+}
+
+/* Al pasar el mouse cambia el fondo y el puntero */
+li:hover {
+    background-color: #dcdcdc;
+    cursor: pointer;
+}
+
+/* ====== FOOTER ====== */
+footer {
+    background-color: #f3f0fa;
+    color: #4b3f66;
+    text-align: center;
+    padding: 15px 10px;
+    border-top: 2px solid #d1c7eb;
+    margin-top: auto;
+    font-size: 0.95em;
+}

@@ -1,0 +1,157 @@
+/* ====== RESETEO Y BASE ====== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: "Georgia", serif;
+    background: linear-gradient(to bottom right, #f9f8f5, #ebe6f8);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.7;
+}
+
+/* ====== CONTENEDOR GENERAL ====== */
+.contenedor {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ====== ENCABEZADO ====== */
+header {
+    background-color: #f2eef9;
+    padding: 40px 0 25px;
+    border-bottom: 2px solid #d1c7eb;
+    box-shadow: 0 3px 6px rgba(120, 100, 150, 0.1);
+    text-align: center;
+}
+
+header h1 {
+    color: #3c2f7b;
+    margin-bottom: 10px;
+    font-size: 2.2em;
+}
+
+header p {
+    color: #555;
+    font-size: 1.1em;
+}
+
+/* ====== MENÚ DE NAVEGACIÓN ====== */
+nav {
+    background-color: #e7e2f3;
+    border-bottom: 2px solid #d1c7eb;
+    box-shadow: 0 2px 6px rgba(120, 100, 150, 0.1);
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #4b358d;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+/* Estados de los enlaces del menú */
+.menu li a:link {
+    background-color: #f9f8fd;
+}
+
+.menu li a:visited {
+    background-color: #f3edf9;
+}
+
+.menu li a:hover {
+    color: #fff;
+    background-color: #705bb8;
+}
+
+.menu li a:active {
+    background-color: #d8c8ff;
+}
+
+/* Enlace activo (página actual) */
+.menu li a.activo {
+    background-color: #705bb8;
+    color: #fff;
+}
+
+/* ====== SECCIÓN PRINCIPAL ====== */
+main {
+    flex: 1;
+    padding: 40px 0;
+}
+
+.principal {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 40px 30px;
+    box-shadow: 0 0 15px rgba(120, 100, 150, 0.1);
+    text-align: center;
+}
+
+.bienvenida h2 {
+    color: #4b358d;
+    margin-bottom: 15px;
+}
+
+.bienvenida p {
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    color: #444;
+}
+
+/* ====== BOTONES DE INICIO ====== */
+.botones-inicio {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.boton {
+    text-decoration: none;
+    background-color: #e7e2f3;
+    color: #4b358d;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(100, 80, 140, 0.15);
+    transition: all 0.3s ease;
+}
+
+.boton:hover {
+    background-color: #705bb8;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* ====== PIE DE PÁGINA ====== */
+footer {
+    background-color: #f2eef9;
+    color: #4b3f66;
+    text-align: center;
+    padding: 15px 10px;
+    border-top: 2px solid #d1c7eb;
+    margin-top: auto;
+    font-size: 0.95em;
+}

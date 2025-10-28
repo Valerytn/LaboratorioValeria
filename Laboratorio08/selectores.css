@@ -1,0 +1,33 @@
+/* Cambia el color de solo los parrafos dentro del div */
+div p {
+    color: #2a4d7b;
+}
+
+/* Cambia el color del parrafo que esta inmediatamente despues del h2 */
+h2 + p {
+    color: #4a18ff;
+}
+
+/* Cambia el color de todos los parrafos que siguen a un h2 */
+h2 ~ p {
+    color: #2eb1c2;
+}
+
+/* Estilos generales para mejor presentacion */
+body {
+    font-family: Georgia, serif;
+    background-color: #f2f2f2;
+    color: #333;
+    margin: 40px;
+    line-height: 1.6;
+}
+
+h1 {
+    color: #1a2b49;
+    text-align: center;
+}
+
+h2 {
+    color: #1d3a5f;
+    margin-top: 30px;
+}
