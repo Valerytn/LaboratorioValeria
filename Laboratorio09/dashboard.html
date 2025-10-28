@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Oceánico</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      height: 100vh;
+      background: #007ea7;
+      color: white;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background: #005f73;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .perfil {
+      text-align: center;
+    }
+    .perfil .avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: white;
+      margin: 0 auto 10px;
+    }
+    .perfil h3 {
+      margin: 5px 0;
+    }
+    .sidebar a {
+      color: #b3e6ff;
+      text-decoration: none;
+      padding: 6px;
+      width: 100%;
+      text-align: center;
+      border-radius: 8px;
+    }
+    .sidebar a:hover {
+      background: rgba(255,255,255,0.2);
+      color: white;
+    }
+
+    /* Contenido */
+    .contenido {
+      padding: 20px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Tarjetas */
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: space-around;
+    }
+    .card {
+      background: rgba(255,255,255,0.15);
+      border-radius: 10px;
+      width: 180px;
+      padding: 15px;
+      text-align: center;
+    }
+
+    /* Secciones */
+    .chart, .graph {
+      background: rgba(255,255,255,0.15);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: justify;
+    }
+    .chart h3, .graph h3 {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="perfil">
+      <div class="avatar"></div>
+      <h3>Marina Blue</h3>
+      <p style="font-size:0.9em;opacity:0.8;">bióloga marina</p>
+    </div>
+    <a href="#">Inicio</a>
+    <a href="#">Exploración</a>
+    <a href="#">Mensajes</a>
+    <a href="#">Datos</a>
+    <a href="#">Gráficos</a>
+  </div>
+
+  <div class="contenido">
+    <div class="top">
+      <h2>Panel de Exploración Marina</h2>
+    </div>
+
+    <div class="cards">
+      <div class="card"><h3>Especies</h3><p>2,434</p></div>
+      <div class="card"><h3>Profundidad Media</h3><p>3,280 m</p></div>
+      <div class="card"><h3>Temperatura</h3><p>12°C</p></div>
+      <div class="card"><h3>Salinidad</h3><p>35 PSU</p></div>
+    </div>
+
+    <div class="chart">
+      <h3>Distribución de Corales</h3>
+      <p>
+        La distribución de los corales depende de la luz solar, la temperatura y la profundidad. 
+        Las mayores concentraciones se hallan en aguas cálidas y poco profundas, donde las algas simbióticas pueden realizar la fotosíntesis.
+        En el Pacífico peruano, el aumento de temperatura y la acidificación marina provocan blanqueamiento y pérdida de biodiversidad coralina.
+      </p>
+    </div>
+
+    <div class="graph">
+      <h3>Evolución de Datos</h3>
+      <p>
+        Los registros de temperatura y salinidad muestran incrementos sostenidos, con picos durante los eventos de El Niño. 
+        Estos cambios alteran las cadenas alimenticias y la reproducción marina. 
+        El monitoreo constante permite detectar variaciones y aplicar estrategias de conservación más efectivas.
+      </p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hábitat Marina</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url("fondomarino3.jpg") no-repeat center center/cover;
+      color: rgb(36, 72, 75);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* 🪸 CONTENEDOR PRINCIPAL */
+    .contenedor {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 50px 70px;
+      border-radius: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(0px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      transition: all 0.6s ease;
+    }
+
+    /* ✨ EFECTO HOVER: se eleva y el fondo se vuelve más borroso */
+    .contenedor:hover {
+      transform: translateY(-10px);
+      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.253);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 15px;
+      text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    p {
+      font-size: 1.1em;
+      margin-bottom: 40px;
+      opacity: 0.9;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 260px;
+      margin: 0 auto;
+    }
+
+    a {
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.15);
+      color: rgb(36, 72, 75);
+      padding: 12px;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: 500;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    a:hover {
+      background: rgba(185, 248, 248, 0.479);
+      transform: translateY(-4px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9em;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <h1>Hábitat Marina</h1>
+    <p>Explora el océano digital: diseño, estructura y armonía visual.</p>
+
+    <div class="links">
+      <a href="boxmodel.html">Estructura Coral</a>
+      <a href="gridflex.html">Mareas del Blog</a>
+      <a href="imagenes.html">Galería Marina</a>
+      <a href="dashboard.html">Dashboard Oceánico</a>
+    </div>
+  </div>
+
+  <footer>© 2025 Hábitat Marina</footer>
+</body>
+</html>
