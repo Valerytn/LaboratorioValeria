@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minecraft</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: grid;
+    grid-template-rows: auto 1fr auto auto;
+    color: #2e3d2f;
+
+  }
+
+  header, .hero, main, footer {
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+  }
+
+  header {
+    background: #90e0ef;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px;
+    padding: 20px;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #03415e;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #c7ffd8;
+    background-image: url("fondominecraft.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    color: #fff;
+    text-shadow: 1px 1px 3px #000;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .hero h1 {
+    font-size: 2.5em;
+    margin: 10px;
+  }
+
+  .btn {
+    background: #8fd19e;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background: #6dbf83;
+  }
+
+
+    .oferta {
+    background: #ffb703;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 0.8em;
+    cursor: pointer;
+    color: #000;
+    font-weight: bold;
+    transition: 0.3s;
+    }
+
+    .oferta:hover {
+    background: #f48c06;
+    transform: scale(1.05);
+    }
+
+  main {
+    background: #bdf7d3;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+  }
+
+  .card {
+    background: #e4ffee;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid #89c497;
+  }
+
+  .card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  footer {
+    background: #8ecaaa;
+    text-align: center;
+    border: 2px solid #63a57d;
+  }
+</style>
+
+</head>
+<body>
+
+<header>
+  Mundo Minecraft – ¡Crea, Sobrevive y Explora!
+  <button class="oferta">Acceder a una oferta</button>
+</header>
+
+<section class="hero">
+  <h1>¡Bienvenido Aventurero!</h1>
+  <button class="btn">Comenzar tu Aventura</button>
+</section>
+
+<main>
+  <div class="card">
+    <img src="155d3e108a7284602f6662b9e7ca9384-removebg-preview.png" alt="Construcción">
+    <h3>Construye tu Mundo</h3>
+    <p>Coloca bloques, crea estructuras y dale vida a tu imaginación.</p>
+  </div>
+
+  <div class="card">
+    <img src="982da1d314b442d53c4ea0d7291af3d4-removebg-preview.png" alt="Explorar">
+    <h3>Explora Biomas</h3>
+    <p>Descubre desiertos, bosques, océanos y templos escondidos.</p>
+  </div>
+
+  <div class="card">
+    <img src="21780acba0d5eac910657fa87dc3f0c5-removebg-preview.png" alt="Supervivencia">
+    <h3>Modo Supervivencia</h3>
+    <p>Reúne recursos, combate mobs y mantente con vida.</p>
+  </div>
+</main>
+
+<footer>
+  © 2025 Minecraft Fanpage — Creado por Valery
+</footer>
+
+</body>
+</html>

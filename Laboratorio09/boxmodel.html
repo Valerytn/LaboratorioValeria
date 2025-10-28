@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Estructura Coral</title>
+  <title>Estructura Coral - Box Model</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,30 +13,33 @@
       margin: 0;
       padding: 30px;
     }
+
     h1 {
       text-align: center;
       margin-bottom: 30px;
     }
+
     .contenedor {
       display: flex;
-      justify-content: center;
-      align-items: flex-start;
+      justify-content: space-around; 
       flex-wrap: wrap;
-      gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
     }
+
     .tarjeta {
       background: rgba(255, 255, 255, 0.15);
-      border-radius: 10px;
-      padding: 20px;
       width: 220px;
       text-align: center;
+      border: 2px solid #b3e6ff;
+      padding: 20px; 
+      margin: 15px; 
+      border-radius: 10px;
     }
+
     .tarjeta h3 {
       color: #b3e6ff;
       margin-bottom: 8px;
     }
+
     .tarjeta p {
       color: #e0f7ff;
       font-size: 0.9em;
@@ -44,36 +48,42 @@
   </style>
 </head>
 <body>
+
   <h1>Estructura Coral</h1>
+
   <div class="contenedor">
     <div class="tarjeta">
       <h3>Coral Cerebro</h3>
       <p>
         Este coral debe su nombre a su aspecto, que recuerda a las circunvoluciones del cerebro humano.
-        Forma estructuras sólidas y resistentes que sirven de base para muchos otros organismos del arrecife.
+        Forma estructuras sólidas y resistentes que sirven de base para otros organismos del arrecife.
       </p>
     </div>
+
     <div class="tarjeta">
       <h3>Coral Cuerno de Alce</h3>
       <p>
         Posee ramas largas y delgadas que se extienden como un cuerno. Su rápido crecimiento
-        permite que se regenere con facilidad, siendo vital para la recuperación de los arrecifes dañados.
+        permite que se regenere con facilidad.
       </p>
     </div>
+
     <div class="tarjeta">
       <h3>Coral de Fuego</h3>
       <p>
-        Con tonos rojizos y anaranjados, este coral es conocido por su belleza y su capacidad urticante.
-        Su presencia aporta color y vida al entorno marino, aunque debe manejarse con precaución.
+        Con tonos rojizos y anaranjados, destaca por su belleza y capacidad urticante. 
+        Se debe manejar con cuidado.
       </p>
     </div>
+
     <div class="tarjeta">
-      <h3>Coral de Cuerno de Ciervo</h3>
+      <h3>Coral Cuerno de Ciervo</h3>
       <p>
-        Con una forma ramificada similar a la cornamenta de un ciervo, este coral crea refugio
-        para pequeños peces y crustáceos, fomentando la biodiversidad dentro del arrecife.
+        Ramificado como la cornamenta de un ciervo, crea refugio
+        para pequeños peces y crustáceos.
       </p>
     </div>
   </div>
+
 </body>
 </html>

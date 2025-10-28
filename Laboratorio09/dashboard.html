@@ -9,13 +9,12 @@
       margin: 0;
       font-family: Arial, sans-serif;
       display: grid;
-      grid-template-columns: 200px 1fr;
+      grid-template-columns: 200px 1fr; /* Sidebar + Contenido */
       height: 100vh;
       background: #007ea7;
       color: white;
     }
 
-    /* Sidebar */
     .sidebar {
       background: #005f73;
       padding: 20px;
@@ -24,6 +23,7 @@
       align-items: center;
       gap: 20px;
     }
+
     .perfil {
       text-align: center;
     }
@@ -34,9 +34,11 @@
       background: white;
       margin: 0 auto 10px;
     }
+
     .perfil h3 {
       margin: 5px 0;
     }
+
     .sidebar a {
       color: #b3e6ff;
       text-decoration: none;
@@ -58,28 +60,31 @@
       flex-direction: column;
       gap: 20px;
     }
+
     .top {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    /* Tarjetas */
+
     .cards {
       display: flex;
       flex-wrap: wrap;
       gap: 15px;
       justify-content: space-around;
     }
+
     .card {
       background: rgba(255,255,255,0.15);
       border-radius: 10px;
       width: 180px;
       padding: 15px;
       text-align: center;
+      border: 2px solid #b3e6ff; 
+      margin: 5px; 
     }
 
-    /* Secciones */
     .chart, .graph {
       background: rgba(255,255,255,0.15);
       border-radius: 10px;
@@ -91,6 +96,7 @@
       margin-bottom: 10px;
       color: #fff;
     }
+
   </style>
 </head>
 <body>
@@ -100,6 +106,7 @@
       <h3>Marina Blue</h3>
       <p style="font-size:0.9em;opacity:0.8;">bióloga marina</p>
     </div>
+
     <a href="#">Inicio</a>
     <a href="#">Exploración</a>
     <a href="#">Mensajes</a>
@@ -136,6 +143,7 @@
         El monitoreo constante permite detectar variaciones y aplicar estrategias de conservación más efectivas.
       </p>
     </div>
+
   </div>
 </body>
 </html>

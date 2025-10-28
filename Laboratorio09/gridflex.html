@@ -9,7 +9,7 @@
       font-family: Arial, sans-serif;
       margin: 0;
       background: #005f73;
-      display: grid;
+      display: grid; /* ✅ GRID usado */
       grid-template-areas:
         "header header"
         "nav nav"
@@ -22,7 +22,7 @@
     }
     header, nav, main, article, aside, footer {
       border-radius: 10px;
-      padding: 15px;
+      padding: 15px; 
     }
     header {
       grid-area: header;
@@ -36,16 +36,17 @@
     }
     main {
       grid-area: main;
-      display: flex;
+      display: flex; 
       flex-wrap: wrap;
       gap: 15px;
     }
     article {
-      flex: 1;
+      flex: 1; 
       min-width: 220px;
       background: rgba(255,255,255,0.2);
       border-radius: 10px;
       padding: 15px;
+      border: 2px solid #b3e6ff; 
     }
     aside {
       grid-area: aside;

@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Galería Marina</title>
   <style>
-    * { box-sizing: border-box; }
+    * { 
+      box-sizing: border-box; 
+    }
+    
     body {
       font-family: Arial, sans-serif;
       background: #007ea7;
@@ -14,25 +17,32 @@
       text-align: center;
       margin: 0;
     }
+
     h1 {
       margin-bottom: 25px;
     }
+
     .galeria {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); 
       gap: 15px;
       max-width: 1100px;
       margin: 0 auto;
     }
+
     .img-container {
       background: rgba(255,255,255,0.15);
-      padding: 8px;
+      padding: 8px;  
+      margin: 5px; 
+      border: 2px solid #b3e6ff; 
       border-radius: 12px;
       transition: 0.3s;
     }
+
     .img-container:hover {
       background: rgba(255,255,255,0.25);
     }
+
     img {
       width: 100%;
       border-radius: 10px;
