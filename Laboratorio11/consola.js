@@ -1,5 +1,5 @@
 //Calcular promedio con validación. Pide 5 notas y calcula el promedio, asegurándote de que estén entre 0 y 20
-console.log("Calcular promedio")
+
 
 let notas = []
 let sumaTot = 0
@@ -24,7 +24,6 @@ console.log("Promedio:", promedio.toFixed(2))
 
 
 // 4. Clasificar edad
-console.log("Clasificar edad");
 
 let edad = parseInt(prompt("Ingrese su edad:"));
 if (edad < 12) console.log("Niño");
@@ -34,7 +33,6 @@ else console.log("Adulto mayor");
 
 
 // 5. Contador de numeros pares e impares
-console.log("Contador de pares e impares");
 
 let pares = 0, impares = 0;
 for (let i = 1; i <= 10; i++) {
@@ -46,7 +44,6 @@ console.log(`Pares: ${pares}, Impares: ${impares}`);
 
 
 // 6. Tabla de multiplicar (1 al 12)
-console.log("Tabla de multiplicar");
 
 let numTabla = parseInt(prompt("Ingrese un numero para su tabla:"));
 for (let i = 1; i <= 12; i++) {
@@ -55,7 +52,6 @@ for (let i = 1; i <= 12; i++) {
 
 
 // 7. Cajero automatico
-console.log("Cajero automatico");
 
 let monto = parseInt(prompt("Ingrese monto a retirar (multiplo de 10):"));
 let billetes = [100, 50, 20, 10];
@@ -73,7 +69,6 @@ for (let b of billetes) {
 
 
 // 8. Numeros primos en rango
-console.log("Numeros primos en rango");
 
 let limite = parseInt(prompt("Ingrese un numero limite:"));
 console.log(`Primos entre 1 y ${limite}:`);
@@ -91,7 +86,6 @@ for (let n = 2; n <= limite; n++) {
 
 
 // 9. Suma desde 1 hasta N, omitiendo multiplos de 5
-console.log("Suma 1 a N (sin multiplos de 5)");
 
 let N = parseInt(prompt("Ingrese N:"));
 let suma = 0;
@@ -102,7 +96,6 @@ console.log(`Suma total (sin multiplos de 5): ${suma}`);
 
 
 // 10. Menu: area del circulo - rectangulo - salir
-console.log("Menu de areas");
 
 let opcion;
 do {
@@ -127,7 +120,6 @@ do {
 
 
 // 11. Numero Armstrong
-console.log("Numero Armstrong")
 
 let numeroTexto = prompt("Ingrese un numero:")
 let numero = parseInt(numeroTexto)
@@ -280,7 +272,7 @@ do {
       break;
 
     case "8":
-      let n = parseInt(prompt("Ingrese un número para ver su tabla:"));
+      let n = parseInt(prompt("Ingrese un numero para ver su tabla:"));
       for (let i = 1; i <= 12; i++) {
         console.log(n + " x " + i + " = " + (n * i));
       }
@@ -297,7 +289,6 @@ do {
 } while (opcion !== "9");
 
 // 13. Simulador de carrito de compras
-console.log("Carrito de compras");
 
 let total = 0;
 let seguirComprando;
@@ -330,3 +321,35 @@ console.log("Total final a pagar:", total.toFixed(2));
 
 //14. Mismo ejercicio anterior, pero con un límite en su presupuesto. La app no deberá permitir que se pase del presupuesto y no
 //deberá considerar el último producto
+let presupuesto = 100
+let totall = 0
+
+while (true) {
+	let precio = parseFloat(prompt("Ingrese precio del producto o 0 para terminar"))
+
+	if (precio === 0 || isNaN(precio)) break
+
+	if (total + precio > presupuesto) {
+		alert("No se puede agregar, supera el presupuesto")
+		continue
+	}
+
+	total += precio
+}
+
+let mensaje = ""
+let totalFinal = total
+
+if (total > 100) {
+	mensaje = "Tiene un descuento del 10%"
+	totalFinal = total * 0.9
+} else if (total >= 50) {
+	mensaje = "Gana un cupon de 5%"
+	totalFinal = total * 0.95
+} else {
+	mensaje = "No aplica descuento"
+}
+
+alert("Total parcial: " + total)
+alert(mensaje)
+alert("Total final: " + totalFinal)
