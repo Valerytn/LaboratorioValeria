@@ -6,127 +6,138 @@
 <title>Minecraft</title>
 
 <style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: grid;
-    grid-template-rows: auto 1fr auto auto;
-    color: #2e3d2f;
 
-  }
+/* ✅ Se aplica modelo de cajas con padding, bordes redondeados y márgenes */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
 
-  header, .hero, main, footer {
-    padding: 20px;
-    border-radius: 10px;
-    margin: 10px;
-  }
+  /* ✅ Uso de Grid para organizar toda la página en: header, hero, main, footer */
+  display: grid;
+  grid-template-rows: auto 1fr auto auto;
+  color: #2e3d2f;
+}
 
-  header {
-    background: #90e0ef;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 12px;
-    padding: 20px;
-    font-size: 1.4em;
-    font-weight: bold;
-    color: #03415e;
-  }
+/* ✅ Modelo de cajas aplicado a cada sección */
+header, .hero, main, footer {
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px;
+}
 
-  .hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #c7ffd8;
-    background-image: url("fondominecraft.jpg");
-    background-size: cover;
-    background-position: center;
-    height: 300px;
-    color: #fff;
-    text-shadow: 1px 1px 3px #000;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
+/* ✅ Header dentro del Grid */
+header {
+  background: #90e0ef;
 
-  .hero h1 {
-    font-size: 2.5em;
-    margin: 10px;
-  }
+  /* ✅ Justify-content para poner el botón a la derecha */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-  .btn {
-    background: #8fd19e;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-    font-size: 1.1em;
-    cursor: pointer;
-  }
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #03415e;
+}
 
-  .btn:hover {
-    background: #6dbf83;
-  }
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
 
+  /* ✅ Se añade imagen de fondo */
+  background-image: url("fondominecraft.jpg");
+  background-size: cover;
+  background-position: center;
 
-    .oferta {
-    background: #ffb703;
-    border: none;
-    padding: 8px 14px;
-    border-radius: 6px;
-    font-size: 0.8em;
-    cursor: pointer;
-    color: #000;
-    font-weight: bold;
-    transition: 0.3s;
-    }
+  height: 300px;
+  color: #fff;
+  text-shadow: 1px 1px 3px #000;
+}
 
-    .oferta:hover {
-    background: #f48c06;
-    transform: scale(1.05);
-    }
+.hero h1 {
+  font-size: 2.5em;
+  margin: 10px;
+}
 
-  main {
-    background: #bdf7d3;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-  }
+/* ✅ Botón con modelo de cajas */
+.btn {
+  background: #8fd19e;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+.btn:hover {
+  background: #6dbf83;
+}
 
-  .card {
-    background: #e4ffee;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    border: 2px solid #89c497;
-  }
+/* ✅ Botón oferta en header también usa modelo de cajas */
+.oferta {
+  background: #ffb703;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.8em;
+  cursor: pointer;
+  color: #000;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.oferta:hover {
+  background: #f48c06;
+  transform: scale(1.05);
+}
 
-  .card img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 10px;
-  }
+/* ✅ Main con Grid interno para tarjetas */
+main {
+  background: #bdf7d3;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* ✅ Grid responsive */
+  gap: 15px;
+}
 
-  footer {
-    background: #8ecaaa;
-    text-align: center;
-    border: 2px solid #63a57d;
-  }
+/* ✅ Cada tarjeta aplica modelo de cajas */
+.card {
+  background: #e4ffee;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  border: 2px solid #89c497; /* ✅ Borde visible */
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* ✅ Footer como parte del Grid */
+footer {
+  background: #8ecaaa;
+  text-align: center;
+  border: 2px solid #63a57d;
+}
+
 </style>
 
 </head>
 <body>
 
+<!-- ✅ HEADER dentro del Grid -->
 <header>
   Mundo Minecraft – ¡Crea, Sobrevive y Explora!
   <button class="oferta">Acceder a una oferta</button>
 </header>
 
+<!-- ✅ HERO con Flexbox para centrar título y botón -->
 <section class="hero">
   <h1>¡Bienvenido Aventurero!</h1>
   <button class="btn">Comenzar tu Aventura</button>
 </section>
 
+<!-- ✅ MAIN es parte del Grid + contiene tarjetas con el modelo de cajas -->
 <main>
   <div class="card">
     <img src="155d3e108a7284602f6662b9e7ca9384-removebg-preview.png" alt="Construcción">
@@ -147,6 +158,7 @@
   </div>
 </main>
 
+<!-- ✅ FOOTER como parte del Grid -->
 <footer>
   © 2025 Minecraft Fanpage — Creado por Valery
 </footer>
