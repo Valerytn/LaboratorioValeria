@@ -264,3 +264,35 @@ function potencia(base, exponente) {
     }
 }
 console.log("2^5 =", potencia(2,5)); // 32
+
+// 24. Generador de secuencia aritmética (con closure y estado interno)
+// Crea una función crearSecuencia(inicio, paso) que devuelva otra función.
+// Cada vez que se invoque la función interna, devuelve el siguiente número de la secuencia.
+
+function crearSecuencia(inicio, paso) {
+    let actual = inicio;
+
+    return function() {
+        let valor = actual; 
+        actual = actual + paso;
+        return valor; 
+    };
+}
+
+// Ejemplo
+const secuencia = crearSecuencia(2, 3);
+console.log(secuencia()); // 2
+console.log(secuencia()); // 5
+console.log(secuencia()); // 8
+console.log(secuencia()); // 11
+console.log(secuencia()); // 14
+
+let inicio = parseInt(prompt("Ingresa el inicio de la secuencia:"));
+let paso = parseInt(prompt("Ingresa el paso de la secuencia:"));
+
+const secuenciaUsuario = crearSecuencia(inicio, paso);
+
+console.log("Primer numero:", secuenciaUsuario());
+console.log("Segundo numero:", secuenciaUsuario());
+console.log("Tercer numero:", secuenciaUsuario());
+console.log("Cuarto numero:", secuenciaUsuario());
