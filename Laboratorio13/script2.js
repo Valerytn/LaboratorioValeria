@@ -98,7 +98,8 @@ let auto = {
     modelo: "Corolla",
     año: 2020,
     detalles: function() {
-        return "Marca: " + this.marca + ", Modelo: " + this.modelo + ", Año: " + this.año;
+        return "Marca: " + this.marca + ", Modelo: " + 
+        this.modelo + ", Año: " + this.año;
     }
 };
 console.log(auto.detalles()); // Marca: Toyota, Modelo: Corolla, Año: 2020

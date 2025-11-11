@@ -14,7 +14,7 @@ function areaRectangulo(base, altura) {
     if (base > 0 && altura > 0) {
         return base * altura;
     } else {
-        return 0; // Si alguna medida no es positiva, devuelve 0
+        return 0; 
     }
 }
 console.log("Area de 5x3:", areaRectangulo(5,3)); // 15
@@ -22,7 +22,7 @@ console.log("Area de 5x3:", areaRectangulo(5,3)); // 15
 // 5. Crea una función esMultiplo(a, b) que indique si a es múltiplo de b
 function esMultiplo(a, b) {
     if (b === 0) {
-        return false; // No se puede dividir entre 0
+        return false;
     }
     if (a % b === 0) {
         return true;
