@@ -9,7 +9,8 @@ console.log("Su costo redondeado hacia abajo es", Math.floor(numero));
 console.log("Su costo redondeado hacia arriba es", Math.ceil(numero));
 console.log("Su costo redondeado normal es", Math.round(numero));
 
-/*4. Numero aleatorio en un rango. Crear una funcion numeroAleatorio(min, max) que devuelva un numero entero entre min y max (incluidos)*/
+/*4. Numero aleatorio en un rango. Crear una funcion numeroAleatorio(min, max) que devuelva un numero 
+entero entre min y max (incluidos)*/
 
 function numeroAleatorio(min, max){
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -25,7 +26,8 @@ let dado1 = numeroAleatorio(1, 6);
 let dado2 = numeroAleatorio(1, 6);
 console.log("Dado 1:", dado1, "Dado 2:", dado2, "Suma:", (dado1 + dado2));
 
-/*6. Potencias y raices. Solicita un numero y muestra su cuadrado, cubo y raiz cuadrada usando Math.pow() y Math.sqrt()*/
+/*6. Potencias y raices. Solicita un numero y muestra su cuadrado, cubo y raiz cuadrada usando Math.pow() 
+y Math.sqrt()*/
 
 let opcion = 0;
 let numero1 = parseFloat(prompt("Ingresar un numero: "));
@@ -267,11 +269,104 @@ class Administrador extends Usuario {
     }
 }
 
-let cliente = new Cliente("Luis", "luis@mail.com", 4);
+let cliente = new Cliente("Luis", "luis@gmail.com", 4);
 console.log(cliente.mostrarInfo());
 
-let admin = new Administrador("Ana", "ana@mail.com", ["crear", "editar", "eliminar"]);
+let admin = new Administrador("Ana", "ana@gmail.com", ["crear", "editar", "eliminar"]);
 console.log(admin.mostrarInfo());
+
+/*15. Polimorfismo. Crear una lista de usuarios (Cliente, Administrador) y recorrela mostrando la informacion con mostrarInfo(). 
+Tip: usa un forEach o for...of para recorrer el array */
+
+class Usuario {
+    constructor(nombre, email) {
+        this.nombre = nombre;
+        this.email = email;
+    }
+
+    mostrarInfo() {
+        return "Usuario: " + this.nombre + ", Email: " + this.email;
+    }
+}
+
+class Cliente extends Usuario {
+    constructor(nombre, email, nivelFidelidad) {
+        super(nombre, email);
+        this.nivelFidelidad = nivelFidelidad;
+    }
+
+    mostrarInfo() {
+        return super.mostrarInfo() + ", Nivel de fidelidad: " + this.nivelFidelidad;
+    }
+}
+
+class Administrador extends Usuario {
+    constructor(nombre, email, permisos) {
+        super(nombre, email);
+        this.permisos = permisos;
+    }
+
+    mostrarInfo() {
+        return super.mostrarInfo() + ", Permisos: " + this.permisos.join(", ");
+    }
+}
+
+let listaUsuarios = [
+    new Cliente("Victor", "victor@mail.com", 3),
+    new Administrador("Lucia", "lucia@mail.com", ["crear", "editar"]),
+    new Cliente("Carlos", "carlos@mail.com", 5),
+    new Administrador("Ana", "ana@mail.com", ["crear", "editar", "eliminar"])
+];
+
+for (let usuario of listaUsuarios) {
+    console.log(usuario.mostrarInfo());
+}
+
+
+/*16. Herencia. Crear la jerarquia Empleado - Programador - ProgramadorSenior 
+• Empleado tiene nombre y sueldoBase 
+• Programador anade lenguaje y metodo calcularSueldo() con bono del 10% 
+• ProgramadorSenior sobreescribe calcularSueldo() con un bono del 25% 
+Tip: llama a super.calcularSueldo() desde la subclase */
+
+class Empleado {
+    constructor(nombre, sueldoBase) {
+        this.nombre = nombre;
+        this.sueldoBase = sueldoBase;
+    }
+
+    calcularSueldo() {
+        return this.sueldoBase;
+    }
+}
+
+class Programador extends Empleado {
+    constructor(nombre, sueldoBase, lenguaje) {
+        super(nombre, sueldoBase);
+        this.lenguaje = lenguaje;
+    }
+
+    calcularSueldo() {
+        return super.calcularSueldo() * 1.10;
+    }
+}
+
+class ProgramadorSenior extends Programador {
+    constructor(nombre, sueldoBase, lenguaje) {
+        super(nombre, sueldoBase, lenguaje);
+    }
+
+    calcularSueldo() {
+        return super.calcularSueldo() * 1.25;
+    }
+}
+
+let emp1 = new Programador("Luis", 2500, "JavaScript");
+let emp2 = new ProgramadorSenior("Ana", 3500, "Python");
+
+console.log(emp1.nombre, "- Sueldo:", emp1.calcularSueldo());
+console.log(emp2.nombre, "- Sueldo:", emp2.calcularSueldo());
+
 
 /*17. Encapsulacion y polimorfismo. Crear una clase Cuenta con atributo privado saldo y metodos depositar() y retirar().
 Luego crea subclases CuentaAhorro y CuentaCorriente que redefinan retirar() segun sus reglas (por ejemplo, permitir
@@ -280,15 +375,12 @@ Tip: implementa validaciones distintas en cada clase hija. */
 
 class Cuenta {
     #saldo;
-
     constructor(saldoInicial) {
         this.#saldo = saldoInicial;
     }
-
     get saldo() {
         return this.#saldo;
     }
-
     depositar(monto) {
         if (monto > 0) {
             this.#saldo += monto;
@@ -297,7 +389,6 @@ class Cuenta {
             console.log("Monto invalido");
         }
     }
-
     retirar(monto) {
         if (monto > 0 && monto <= this.#saldo) {
             this.#saldo -= monto;
@@ -306,7 +397,6 @@ class Cuenta {
             console.log("Fondos insuficientes");
         }
     }
-
     transferir(monto, cuentaDestino) {
         if (monto > 0 && monto <= this.#saldo) {
             this.#saldo -= monto;
@@ -327,13 +417,11 @@ class CuentaAhorro extends Cuenta {
         }
     }
 }
-
 class CuentaCorriente extends Cuenta {
     constructor(saldoInicial, limiteSobregiro) {
         super(saldoInicial);
         this.limiteSobregiro = limiteSobregiro;
     }
-
     retirar(monto) {
         if (monto > 0 && monto <= this.saldo + this.limiteSobregiro) {
             console.log("Retiro realizado");
@@ -344,7 +432,6 @@ class CuentaCorriente extends Cuenta {
         }
     }
 }
-
 let ahorro = new CuentaAhorro(500);
 let corriente = new CuentaCorriente(300, 200);
 
@@ -370,17 +457,24 @@ class Carrito {
     }
 
     agregarProducto(producto) {
-        this.productos.push(producto);
-        console.log("Producto agregado:", producto.nombre);
+        let posicion = this.productos.length;
+        this.productos[posicion] = producto;
+        console.log("Producto agregado: " + producto.nombre);
     }
 
     calcularTotal() {
-        return this.productos.reduce((total, p) => total + p.precio, 0);
+        let total = 0;
+        for (let i = 0; i < this.productos.length; i++) {
+            total = total + this.productos[i].precio;
+        }
+        return total;
     }
 
     mostrarResumen() {
         console.log("Resumen del carrito:");
-        this.productos.forEach(p => console.log("- " + p.nombre + ": $" + p.precio));
+        for (let i = 0; i < this.productos.length; i++) {
+            console.log("- " + this.productos[i].nombre + ": $" + this.productos[i].precio);
+        }
         console.log("Total a pagar: $" + this.calcularTotal());
     }
 }
@@ -404,31 +498,26 @@ class Notificacion {
 
     enviar() {}
 }
-
 class Email extends Notificacion {
     enviar() {
         console.log("Enviando email a", this.destino);
     }
 }
-
 class SMS extends Notificacion {
     enviar() {
         console.log("Enviando SMS a", this.destino);
     }
 }
-
 class Push extends Notificacion {
     enviar() {
         console.log("Enviando notificacion push a", this.destino);
     }
 }
-
 function procesarNotificaciones(lista) {
     lista.forEach(notificacion => {
         notificacion.enviar();
     });
 }
-
 let notificaciones = [
     new Email("cliente@mail.com"),
     new SMS("999123456"),
