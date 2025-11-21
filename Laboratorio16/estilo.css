@@ -1,0 +1,16 @@
+        .oscuro { background: #222; color: white; }
+        .mover { animation: mover 2s forwards; }
+        @keyframes mover {
+            from { transform: translateX(0); }
+            to { transform: translateX(300px); }
+        }
+        img.miniatura {
+            width: 80px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        #imgGrande {
+            width: 250px;
+            display: block;
+            margin-top: 10px;
+        }

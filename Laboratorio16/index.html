@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicios DOM – Práctica Completa</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<h1>Ejercicios DOM</h1>
+
+<!-- 3 y 4: cambiar texto -->
+<section id="ej3">
+    <h2>3–4: Cambiar texto dinámicamente</h2>
+    <p id="parrafoTexto">Texto original</p>
+    <button id="btnCambiarTexto">Cambiar texto</button>
+</section>
+
+<hr>
+
+<!-- 5: modo oscuro -->
+<section id="ej5">
+    <h2>5: Activar/desactivar modo oscuro</h2>
+    <button id="btnOscuro">Modo Oscuro</button>
+</section>
+
+<hr>
+
+<!-- 6: contador -->
+<section id="ej6">
+    <h2>6: Contador interactivo</h2>
+    <button id="btnMenos">−</button>
+    <span id="contador">0</span>
+    <button id="btnMas">+</button>
+    <p id="msgContador"></p>
+</section>
+
+<hr>
+
+<!-- 7: agregar/eliminar elementos -->
+<section id="ej7">
+    <h2>7: Agregar y eliminar elementos de una lista</h2>
+    <input id="inputItem" type="text" placeholder="Nuevo elemento">
+    <button id="btnAgregarItem">Agregar</button>
+    <button id="btnEliminarUltimo">Eliminar último</button>
+    <ul id="listaItems"></ul>
+</section>
+
+<hr>
+
+<!-- 8: formulario con validación -->
+<section id="ej8">
+    <h2>8: Validar formulario</h2>
+    <input id="nombre" type="text" placeholder="Nombre"><br>
+    <div id="errorNombre"></div>
+
+    <input id="correo" type="text" placeholder="Correo"><br>
+    <div id="errorCorreo"></div>
+
+    <button id="btnValidar">Validar</button>
+</section>
+
+<hr>
+
+<!-- 9: galería con miniaturas -->
+<section id="ej9">
+    <h2>9: Galería con miniaturas</h2>
+    <img class="miniatura" src="https://via.placeholder.com/80/ff4444">
+    <img class="miniatura" src="https://via.placeholder.com/80/44ff44">
+    <img class="miniatura" src="https://via.placeholder.com/80/4444ff">
+
+    <div>
+        <img id="imgGrande" src="https://via.placeholder.com/250">
+    </div>
+</section>
+
+<hr>
+
+<!-- 10: tabla dinámica -->
+<section id="ej10">
+    <h2>10: Tabla dinámica desde JS</h2>
+    <button id="btnGenerarTabla">Generar tabla</button>
+    <table border="1" id="tablaProductos"></table>
+</section>
+
+<hr>
+
+<!-- 11: delegación de eventos -->
+<section id="ej11">
+    <h2>11: Eliminar ítems haciendo clic (delegación)</h2>
+    <ul id="listaDelegada">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+</section>
+
+<hr>
+
+<!-- 12: animación -->
+<section id="ej12">
+    <h2>12: Animación con CSS y DOM</h2>
+    <div id="cuadrado" style="width:60px; height:60px; background:red;"></div>
+    <button id="btnMover">Mover</button>
+    <button id="btnReiniciar">Reiniciar</button>
+</section>
+
+<hr>
+
+<!-- 13: CRUD usuarios -->
+<section id="ej13">
+    <h2>13: CRUD de usuarios</h2>
+
+    <input id="crudNombre" type="text" placeholder="Nombre">
+    <input id="crudEdad" type="number" placeholder="Edad">
+    <button id="btnAgregarUsuario">Agregar</button>
+
+    <table border="1" id="tablaCRUD">
+        <thead>
+            <tr><th>Nombre</th><th>Edad</th><th>Acciones</th></tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</section>
+
+<hr>
+
+<!-- 14 -->
+<section id="ej14">
+    <h2>14: Mostrar JSON en consola</h2>
+    <button id="btnMostrarJSON">Mostrar JSON</button>
+</section>
+
+<hr>
+
+<!-- 15 -->
+<section id="ej15">
+    <h2>15: Parsear JSON y mostrar valor</h2>
+    <p id="valorJSON"></p>
+    <button id="btnCargarJSON">Cargar JSON</button>
+</section>
+
+<hr>
+
+<!-- 16 -->
+<section id="ej16">
+    <h2>16: Productos JSON → objeto → lista</h2>
+    <ul id="ulProductos"></ul>
+</section>
+
+<hr>
+
+<!-- 17 -->
+<section id="ej17">
+    <h2>17: Guardar y recuperar JSON en localStorage</h2>
+    <button id="btnGuardarLS">Guardar usuario</button>
+    <button id="btnMostrarLS">Mostrar usuario</button>
+    <p id="userLS"></p>
+</section>
+
+<hr>
+
+<!-- 18 -->
+<section id="ej18">
+    <h2>18: Tabla desde JSON</h2>
+    <button id="btnGenerarLibros">Generar Tabla</button>
+    <table border="1" id="tablaLibros"></table>
+</section>
+
+<hr>
+
+<!-- 19 -->
+<section id="ej19">
+    <h2>19: Modificar objeto JSON y volver a convertir</h2>
+    <button id="btnModificarJSON">Modificar JSON</button>
+    <p id="jsonModificado"></p>
+</section>
+
+<hr>
+
+<!-- 20 -->
+<section id="ej20">
+    <h2>20: Guardar nombre en objeto → JSON</h2>
+    <input id="nombreInput20" type="text" placeholder="Tu nombre">
+    <button id="btnGuardarNombre">Guardar</button>
+</section>
+
+<hr>
+
+<!-- 21 -->
+<section id="ej21">
+    <h2>21: Lista de tareas (JSON)</h2>
+    <ul id="listaTareas"></ul>
+</section>
+
+<hr>
+
+<!-- 22 -->
+<section id="ej22">
+    <h2>22: Simulador de perfil con localStorage</h2>
+
+    <form id="formPerfil">
+        <input id="perfilNombre" type="text" placeholder="Nombre">
+        <input id="perfilEdad" type="number" placeholder="Edad">
+        <input id="perfilPais" type="text" placeholder="País">
+        <button type="submit">Guardar Perfil</button>
+    </form>
+
+    <h3>Perfil Guardado</h3>
+    <p id="perfilMostrado"></p>
+</section>
+
+<script src="app.js"></script>
+
+</body>
+</html>
