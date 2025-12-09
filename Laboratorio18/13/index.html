@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Quitar etiquetas &lt;h1&gt;</title>
+	<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+	<main class="panel">
+		<h2>Quitar etiquetas &lt;h1&gt; del texto</h2>
+
+		<label for="entrada">Texto de entrada:</label>
+		<textarea id="entrada" placeholder='Ejemplo: <h1 class="titulo">Hola</h1>'></textarea>
+
+		<div class="botones">
+			<button id="btn-quitar">Quitar &lt;h1&gt;</button>
+			<button id="btn-reset">Restablecer</button>
+		</div>
+
+		<label for="salida">Texto sin &lt;h1&gt;:</label>
+		<textarea id="salida" readonly placeholder="Aquí aparecerá el texto sin las etiquetas"></textarea>
+
+		<p class="nota">La expresión usada: <code>&lt;/?h1[^&gt;]*&gt;</code> (global, case-insensitive)</p>
+	</main>
+
+	<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Contador Glitter</title>
+
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #0d0d0d;
+        font-family: Arial, sans-serif;
+        gap: 20px;
+    }
+
+    /* Número del contador */
+    #contador {
+        font-size: 70px;
+        font-weight: bold;
+        transition: 0.3s;
+        color: #00ffe5;
+        text-shadow: 
+            0 0 10px #00ffe5,
+            0 0 20px #00ffe5,
+            0 0 40px #00e4ff;
+    }
+
+    /* Botones glitter */
+    button {
+        padding: 15px 30px;
+        font-size: 20px;
+        font-weight: bold;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        margin: 5px;
+
+        background: linear-gradient(45deg, #ff00cc, #3333ff);
+        color: white;
+        box-shadow: 0 0 10px #ff00ccaa;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px #ff33ff;
+    }
+</style>
+
+</head>
+<body>
+
+<div id="contador">0</div>
+
+<button id="btnSumar">Sumar</button>
+<button id="btnRestar">Restar</button>
+
+<script>
+    const contador = document.getElementById("contador");
+    const btnSumar = document.getElementById("btnSumar");
+    const btnRestar = document.getElementById("btnRestar");
+
+    let valor = 0;
+
+    btnSumar.onclick = function () {
+        valor++;
+        actualizar();
+    };
+
+    btnRestar.onclick = function () {
+        valor--;
+        actualizar();
+    };
+
+    function actualizar() {
+        contador.textContent = valor;
+
+        if (valor < 0) {
+            contador.style.color = "#ff3333";
+            contador.style.textShadow =
+                "0 0 10px #ff3333, 0 0 20px #ff3333, 0 0 40px #ff0000";
+        } else {
+            contador.style.color = "#00ffe5";
+            contador.style.textShadow =
+                "0 0 10px #00ffe5, 0 0 20px #00ffe5, 0 0 40px #00e4ff";
+        }
+    }
+</script>
+
+</body>
+</html>

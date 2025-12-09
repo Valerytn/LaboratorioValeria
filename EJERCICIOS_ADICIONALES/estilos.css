@@ -1,0 +1,98 @@
+body {
+    font-family: Arial;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+section {
+    background: rgba(255, 255, 255, 0.15);   /* transparente tipo vidrio */
+    backdrop-filter: blur(10px);             /* fondo borroso */
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1.5px solid rgba(255, 255, 255, 0.4); /* borde tipo glass */
+    border-radius: 14px;
+
+    padding: 20px;
+    margin-bottom: 30px;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                background 0.3s ease;
+}
+
+/* Efecto hover */
+section:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.25);  /* un poco más visible */
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+}
+
+
+button {
+    padding: 10px 15px;
+    cursor: pointer;
+    border: none;
+    background: #3498db;
+    color: white;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+input {
+    padding: 8px;
+    margin: 5px 0;
+    width: 200px;
+    border: 2px solid #ccc;
+}
+
+.error {
+    border-color: red;
+}
+
+/* Menú */
+.menu {
+    display: none;
+    border: 1px solid #aaa;
+    width: 120px;
+    padding: 10px;
+    background: white;
+    position: absolute;
+}
+
+.menu p:hover {
+    background: #eee;
+    cursor: pointer;
+}
+
+/* Galería */
+.grande {
+    width: 300px;
+    height: 200px;
+    border: 2px solid #333;
+}
+
+.miniaturas {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.mini {
+    width: 80px;
+    height: 60px;
+    cursor: pointer;
+    border: 2px solid #888;
+}
+
+/* Contador */
+#contador {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}

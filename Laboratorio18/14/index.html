@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dividir texto en oraciones</title>
+	<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<main class="panel">
+	<h2>Detectar fecha (dd/mm/yyyy)</h2>
+
+	<label for="fecha">Ingrese una fecha:</label>
+	<input id="fecha" type="text" placeholder="Ejemplo: 01/12/2025">
+
+	<button id="btn-validar">Validar</button>
+
+	<p id="resultado" class="resultado"></p>
+
+	<p class="nota">Regex usada: <code>^\d{2}\/\d{2}\/\d{4}$</code></p>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
