@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>PokéApp Básica</title>
+</head>
+<body>
+    <!-- EJERCICIO 1, 4, 5, 6 -->
+    <h1>PokéApp</h1>
+
+    <!-- EJERCICIO 9: Buscador visual -->
+    <section>
+        <h2>Buscador Pokémon</h2>
+        <input id="pokeInput" type="text" placeholder="ID o nombre" />
+        <button onclick="buscarPokemon()">Buscar</button>
+        <div id="pokeResultado"></div>
+    </section>
+
+    <!-- EJERCICIO 10: Mostrar Pokemon 1-10 -->
+    <section>
+        <h2>Pokémon del 1 al 10</h2>
+        <div id="lista10" class="grid"></div>
+    </section>
+
+    <!-- EJERCICIO 11-13: Tipos y Stats -->
+    <section>
+        <h2>Tipos y Stats</h2>
+        <input id="pokeStatsInput" type="text" placeholder="ID o nombre" />
+        <button onclick="buscarStats()">Ver Stats</button>
+        <div id="statsResultado"></div>
+    </section>
+
+    <!-- EJERCICIO 14: Slider 3 en 3 (Pokémon 1-12) -->
+    <section>
+        <h2>Pokémon 1-12 (3 a la vez)</h2>
+        <div id="slider" class="grid"></div>
+        <button onclick="anterior()">Anterior</button>
+        <button onclick="siguiente()">Siguiente</button>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
