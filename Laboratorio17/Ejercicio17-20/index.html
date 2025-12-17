@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejercicios 17-20 - Async/Await</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #fff7e6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+.box {
+  background: #ffe0b3;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #ffbf80;
+  width: 350px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background: #ff9933;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
+input {
+  padding: 8px;
+  margin: 5px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+  <h2>17. Cargar Mensaje (Async/Await)</h2>
+  <button id="btnMsgA">Cargar mensaje</button>
+  <p id="msgAsync"></p>
+</div>
+
+<div class="box">
+  <h2>18. Cargar Usuario (Async/Await)</h2>
+  <button id="btnUserA">Cargar usuario</button>
+  <p id="userAsync"></p>
+</div>
+
+<div class="box">
+  <h2>19. División Asincrónica (Async/Await)</h2>
+  <input id="numAA" type="number" placeholder="Numerador">
+  <input id="numBA" type="number" placeholder="Denominador">
+  <button id="btnDivA">Dividir</button>
+  <p id="divAsyncRes"></p>
+</div>
+
+<div class="box">
+  <h2>20. Procesar Lista (Async/Await)</h2>
+  <button id="btnListaA">Procesar lista</button>
+  <div id="listaAsync"></div>
+</div>
+
+<script>
+// 17. cargarMensaje Async/Await
+function cargarMensajeAsync() {
+  return new Promise(resolve => {
+    setTimeout(() => resolve("Mensaje cargado"), 1000);
+  });
+}
+document.getElementById("btnMsgA").addEventListener("click", async () => {
+  const p = document.getElementById("msgAsync");
+  p.textContent = "Cargando...";
+  const msg = await cargarMensajeAsync();
+  p.textContent = msg;
+});
+
+// 18. cargarUsuario Async/Await
+function cargarUsuarioAsync() {
+  return new Promise(resolve => {
+    const tiempo = Math.floor(Math.random()*700)+800;
+    setTimeout(() => resolve({id:1, nombre:"Juancito"}), tiempo);
+  });
+}
+document.getElementById("btnUserA").addEventListener("click", async () => {
+  const p = document.getElementById("userAsync");
+  p.textContent = "Cargando usuario...";
+  const u = await cargarUsuarioAsync();
+  p.textContent = `Usuario cargado: ${u.nombre} (ID: ${u.id})`;
+});
+
+// 19. dividirAsync Async/Await
+function dividirAsyncPromesaA(a,b){
+  return new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+      if(b===0) reject(new Error("No se puede dividir entre cero"));
+      else resolve(a/b);
+    },1500);
+  });
+}
+document.getElementById("btnDivA").addEventListener("click", async () => {
+  const p = document.getElementById("divAsyncRes");
+  const a = Number(document.getElementById("numAA").value);
+  const b = Number(document.getElementById("numBA").value);
+  p.textContent = "Procesando...";
+  try {
+    const res = await dividirAsyncPromesaA(a,b);
+    p.textContent = "Resultado: " + res;
+  } catch(err) {
+    p.textContent = "Error: " + err.message;
+  }
+});
+
+// 20. procesarLista Async/Await
+function procesarListaAsync(nums){
+  return Promise.all(nums.map(num => new Promise(resolve=>{
+    const t = Math.floor(Math.random()*1000)+500;
+    setTimeout(()=>resolve("Procesando " + num + "..."), t);
+  })));
+}
+document.getElementById("btnListaA").addEventListener("click", async () => {
+  const salida = document.getElementById("listaAsync");
+  salida.innerHTML="";
+  const nums = [1,2,3,4,5];
+  const msgs = await procesarListaAsync(nums);
+  msgs.forEach(m=>{
+    const p = document.createElement("p");
+    p.textContent = m;
+    salida.appendChild(p);
+  });
+  const fin = document.createElement("p");
+  fin.style.fontWeight="bold";
+  fin.textContent="Proceso completado";
+  salida.appendChild(fin);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejercicio 4 - JSON SyntaxError</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #fff0f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .container {
+    background: #fef9f9;
+    padding: 30px;
+    border-radius: 15px;
+    width: 450px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+  h1 {
+    color: #d6336c;
+    margin-bottom: 20px;
+  }
+  input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #f3a6c1;
+    font-size: 16px;
+  }
+  button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #d6336c;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  button:hover {
+    background: #a31f4a;
+  }
+  pre {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  .error {
+    color: #e63946;
+    background: #ffe6ea;
+  }
+  .success {
+    color: #1b4332;
+    background: #d8f3dc;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Ejercicio 4 - JSON SyntaxError</h1>
+  <p>Ingresa un JSON valido (debe empezar con {" o [ )</p>
+  <input type="text" id="jsonInput" placeholder='{"nombre": "Juan"}'>
+  <br>
+  <button onclick="validarJSON()">Validar JSON</button>
+  <pre id="output"></pre>
+</div>
+
+<script>
+function validarJSON() {
+  const input = document.getElementById("jsonInput").value.trim();
+  const out = document.getElementById("output");
+
+  try {
+    if (!input) throw new Error("No ingreso ningun valor");
+    if (!input.startsWith("{") && !input.startsWith("[")) {
+      // Forzamos SyntaxError si no empieza con { o [
+      throw new SyntaxError("El JSON debe empezar con { o [");
+    }
+    const obj = JSON.parse(input); // Aqui parseamos
+    out.className = "success";
+    out.textContent = "JSON valido: " + JSON.stringify(obj, null, 2);
+  } catch(e) {
+    out.className = "error";
+    out.textContent = `Error detectado:\nNombre: ${e.name}\nMensaje: ${e.message}`;
+  }
+}
+</script>
+
+</body>
+</html>

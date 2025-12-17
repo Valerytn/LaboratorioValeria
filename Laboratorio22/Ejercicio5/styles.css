@@ -1,0 +1,44 @@
+/* Diseño minimalista y moderno */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    color: #1f2937;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+button {
+    padding: 10px 25px;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    background-color: #9bdb66;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #94aee6;
+}
+
+#resultado {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ffffffaa;
+    border-radius: 8px;
+    font-size: 1.2em;
+    color: #111827;
+    min-width: 150px;
+    text-align: center;
+}

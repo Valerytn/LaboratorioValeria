@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejercicio - Validar DNI</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .form-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 400px;
+    text-align: center;
+  }
+  h1 {
+    color: #2d6cdf;
+    margin-bottom: 20px;
+  }
+  label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #2d6cdf;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  button:hover {
+    background: #1b4fa0;
+  }
+  pre {
+    margin-top: 20px;
+    background: #e1e8f0;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  .error { color: red; }
+  .success { color: green; }
+</style>
+</head>
+<body>
+
+<div class="form-container">
+  <h1>Validacion de DNI</h1>
+  <form id="dniForm" onsubmit="return validarDNI();">
+    <label for="dni">Ingrese su DNI:</label>
+    <input type="text" id="dni" placeholder="Ej: 12345678">
+    <br>
+    <button type="submit">Validar</button>
+  </form>
+  <pre id="output"></pre>
+</div>
+
+<script>
+function validarDNI() {
+  const dniInput = document.getElementById("dni").value.trim();
+  const out = document.getElementById("output");
+
+  try {
+    if (!dniInput) throw new Error("No ingreso ningun valor");
+    if (!/^\d+$/.test(dniInput)) throw new Error("El DNI solo puede contener numeros");
+    if (dniInput.length !== 8) throw new Error("El DNI debe tener 8 digitos");
+    
+    out.className = "success";
+    out.textContent = "DNI valido";
+  } catch (e) {
+    out.className = "error";
+    out.textContent = "Error: " + e.message;
+  }
+
+  return false; 
+}
+</script>
+
+</body>
+</html>

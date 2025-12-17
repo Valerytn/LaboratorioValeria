@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Validar Edad</title>
+</head>
+<body>
+<h1>Abre la consola (F12) para probar</h1>
+<script>
+function validarEdad(edad) {
+  if (typeof edad !== "number" || isNaN(edad) || edad < 0) {
+    throw new Error("Edad invalida");
+  }
+  return "Edad valida: " + edad;
+}
+
+let edadInput = Number(prompt("Ingresa tu edad:"));
+
+try {
+  let mensaje = validarEdad(edadInput);
+  console.log(mensaje);
+} catch(e) {
+  console.log("fallo: " + e.message);
+} finally {
+  console.log("finally: validacion completada");
+}
+</script>
+</body>
+</html>

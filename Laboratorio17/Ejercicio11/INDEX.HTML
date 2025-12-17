@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>División Asincrónica</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #fff0e1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+  }
+  .box {
+    background: #ffd9b3;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #ffb380;
+    width: 350px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  input, button {
+    padding: 8px;
+    margin: 5px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+  }
+  button {
+    background: #ff8040;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<div class="box">
+  <h2>División Asincrónica</h2>
+  <input id="numA" type="number" placeholder="Numerador">
+  <input id="numB" type="number" placeholder="Denominador">
+  <button id="btnDividir">Dividir</button>
+  <p id="resultado"></p>
+</div>
+
+<script>
+function dividirAsync(a, b, callback) {
+  setTimeout(() => {
+    if (b === 0) {
+      callback(new Error("No se puede dividir entre cero"), null);
+    } else {
+      callback(null, a / b);
+    }
+  }, 1500);
+}
+
+document.getElementById("btnDividir").addEventListener("click", () => {
+  const a = Number(document.getElementById("numA").value);
+  const b = Number(document.getElementById("numB").value);
+  document.getElementById("resultado").textContent = "Procesando...";
+  
+  dividirAsync(a, b, (err, res) => {
+    if (err) {
+      document.getElementById("resultado").textContent = "Error: " + err.message;
+    } else {
+      document.getElementById("resultado").textContent = "Resultado: " + res;
+    }
+  });
+});
+</script>
+
+</body>
+</html>

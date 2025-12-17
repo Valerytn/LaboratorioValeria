@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio 7 - TypeError</title>
+</head>
+<body>
+<h1>Abre la consola (F12) para probar</h1>
+<script>
+try {
+  // Provocamos TypeError 
+  let x = null;
+  console.log(x.nombre.toUpperCase()); // x es null 
+} catch(e) {
+  if (e instanceof TypeError) {
+    console.log("Se produjo un TypeError: " + e.message);
+  } else if (e instanceof ReferenceError) {
+    console.log("Se produjo un ReferenceError: " + e.message);
+  } else {
+    console.log("Otro tipo de error: " + e.message);
+  }
+} finally {
+  console.log("finally: ejecucion completada");
+}
+</script>
+</body>
+</html>

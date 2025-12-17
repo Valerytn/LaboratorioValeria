@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Equipos</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <h1>Todo sobre Equipos de Fútbol</h1>
+
+    <h2>Registrar un equipo</h2>
+    <input type="text" id="nombre" placeholder="Nombre">
+    <input type="text" id="ciudad" placeholder="Ciudad">
+    <input type="number" id="nivelAtaque" placeholder="Nivel Ataque (1-10)">
+    <input type="number" id="nivelDefensa" placeholder="Nivel Defensa (1-10)">
+    <button onclick="registrarEquipo()">Registrar</button>
+
+    <h2>Lista de equipos</h2>
+    <button onclick="listarEquipos()">Actualizar lista</button>
+    <ul id="listaEquipos"></ul>
+
+    <h2>Consultar equipo por ID</h2>
+    <input type="number" id="equipoId" placeholder="ID">
+    <button onclick="consultarEquipo()">Consultar</button>
+    <pre id="resultadoEquipo"></pre>
+</body>
+</html>

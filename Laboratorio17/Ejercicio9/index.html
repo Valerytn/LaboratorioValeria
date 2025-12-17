@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Cargar Mensaje - Callback</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f8e1f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+  }
+  .box {
+    background: #ffe4f0;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #d0a0c0;
+    width: 300px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background: #d46a9c;
+    color: white;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<div class="box">
+  <h2>Gatito Mensajero</h2>
+  <button id="btnMensaje">Cargar mensaje</button>
+  <p id="mensaje"></p>
+</div>
+
+<script>
+function cargarMensaje(callback) {
+  setTimeout(() => {
+    callback("Mensaje cargado");
+  }, 1000);
+}
+
+document.getElementById("btnMensaje").addEventListener("click", () => {
+  document.getElementById("mensaje").textContent = "Cargando...";
+  cargarMensaje((msg) => {
+    document.getElementById("mensaje").textContent = msg;
+  });
+});
+</script>
+
+</body>
+</html>

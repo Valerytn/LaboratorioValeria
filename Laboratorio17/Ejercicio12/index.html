@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Procesar Lista</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #e0f7ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+  }
+  .box {
+    background: #b3ecff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #80dfff;
+    width: 400px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background: #00bfff;
+    color: white;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<div class="box">
+  <h2>Procesar Lista de Números</h2>
+  <button id="btnProcesar">Procesar</button>
+  <div id="salida"></div>
+</div>
+
+<script>
+function procesarLista(numeros, callbackFinal) {
+  let cont = 0;
+  numeros.forEach(num => {
+    let tiempo = Math.floor(Math.random() *1000)+500; // 500 a 1500 ms
+    setTimeout(() => {
+      const p = document.createElement("p");
+      p.textContent = "Procesando " + num + "...";
+      document.getElementById("salida").appendChild(p);
+      
+      cont++;
+      if (cont === numeros.length) {
+        callbackFinal("Proceso completado");
+      }
+    }, tiempo);
+  });
+}
+
+document.getElementById("btnProcesar").addEventListener("click", () => {
+  document.getElementById("salida").innerHTML = "";
+  const numeros = [1, 2, 3, 4, 5];
+  procesarLista(numeros, (msg) => {
+    const final = document.createElement("p");
+    final.style.fontWeight = "bold";
+    final.textContent = msg;
+    document.getElementById("salida").appendChild(final);
+  });
+});
+</script>
+
+</body>
+</html>

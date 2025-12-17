@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Division con try/catch/finally</title>
+</head>
+<body>
+<h1>Abre la consola (F12) para probar</h1>
+<script>
+let a = Number(prompt("Ingresa el numerador:"));
+let b = Number(prompt("Ingresa el denominador:"));
+
+try {
+  // Provocam error 
+  if (b === 2) throw new Error("No se puede dividir entre 2");
+  let resultado = a / b;
+  console.log("Resultado del try: " + resultado);
+} catch(e) {
+  console.log("fallo: " + e.message);
+} finally {
+  console.log("finally: " + a + " / " + b + " = " + (a / b));
+}
+</script>
+</body>
+</html>

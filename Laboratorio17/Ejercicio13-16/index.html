@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejercicios 13-16 - Promesas</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f8ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+.box {
+  background: #cce7ff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #99ccff;
+  width: 350px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background: #3399ff;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+  <h2>13. Cargar Mensaje (Promesa)</h2>
+  <button id="btnMsg">Cargar mensaje</button>
+  <p id="msgPromesa"></p>
+</div>
+
+<div class="box">
+  <h2>14. Cargar Usuario (Promesa)</h2>
+  <button id="btnUser">Cargar usuario</button>
+  <p id="userPromesa"></p>
+</div>
+
+<div class="box">
+  <h2>15. División Asincrónica (Promesa)</h2>
+  <input id="numA" type="number" placeholder="Numerador">
+  <input id="numB" type="number" placeholder="Denominador">
+  <button id="btnDiv">Dividir</button>
+  <p id="divPromesa"></p>
+</div>
+
+<div class="box">
+  <h2>16. Procesar Lista (Promesa)</h2>
+  <button id="btnLista">Procesar lista</button>
+  <div id="listaPromesa"></div>
+</div>
+
+<script>
+// 13. cargarMensaje Promesa
+function cargarMensajePromesa() {
+  return new Promise(resolve => {
+    setTimeout(() => resolve("Mensaje cargado"), 1000);
+  });
+}
+document.getElementById("btnMsg").addEventListener("click", () => {
+  document.getElementById("msgPromesa").textContent = "Cargando...";
+  cargarMensajePromesa().then(msg => {
+    document.getElementById("msgPromesa").textContent = msg;
+  });
+});
+
+// 14. cargarUsuario Promesa
+function cargarUsuarioPromesa() {
+  return new Promise(resolve => {
+    let tiempo = Math.floor(Math.random() * 700) + 800;
+    setTimeout(() => resolve({id:1, nombre:"Juancito"}), tiempo);
+  });
+}
+document.getElementById("btnUser").addEventListener("click", () => {
+  document.getElementById("userPromesa").textContent = "Cargando usuario...";
+  cargarUsuarioPromesa().then(u => {
+    document.getElementById("userPromesa").textContent = `Usuario cargado: ${u.nombre} (ID: ${u.id})`;
+  });
+});
+
+// 15. dividirAsync Promesa
+function dividirAsyncPromesa(a,b) {
+  return new Promise((resolve,reject) => {
+    setTimeout(() => {
+      if(b===0) reject(new Error("No se puede dividir entre cero"));
+      else resolve(a/b);
+    },1500);
+  });
+}
+document.getElementById("btnDiv").addEventListener("click", () => {
+  const a = Number(document.getElementById("numA").value);
+  const b = Number(document.getElementById("numB").value);
+  document.getElementById("divPromesa").textContent = "Procesando...";
+  dividirAsyncPromesa(a,b)
+    .then(res => document.getElementById("divPromesa").textContent = "Resultado: " + res)
+    .catch(err => document.getElementById("divPromesa").textContent = "Error: " + err.message);
+});
+
+// 16. procesarLista Promesa
+function procesarListaPromesa(nums) {
+  let promesas = nums.map(num => new Promise(resolve => {
+    let t = Math.floor(Math.random()*1000)+500;
+    setTimeout(() => {
+      resolve("Procesando " + num + "...");
+    }, t);
+  }));
+  return Promise.all(promesas).then(msgs => msgs);
+}
+document.getElementById("btnLista").addEventListener("click", () => {
+  const salida = document.getElementById("listaPromesa");
+  salida.innerHTML = "";
+  const nums = [1,2,3,4,5];
+  procesarListaPromesa(nums).then(msgs => {
+    msgs.forEach(m => {
+      const p = document.createElement("p");
+      p.textContent = m;
+      salida.appendChild(p);
+    });
+    const fin = document.createElement("p");
+    fin.style.fontWeight="bold";
+    fin.textContent = "Proceso completado";
+    salida.appendChild(fin);
+  });
+});
+</script>
+
+</body>
+</html>
